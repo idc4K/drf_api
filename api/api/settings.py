@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'data',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework_simplejwt'
     
 ]
 
@@ -79,16 +80,20 @@ WSGI_APPLICATION = 'api.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'api',
-        'USER': 'api',
-        'PASSWORD': 'JrmkIdc22@',
+        'NAME': 'christapi',
+        'USER': 'christapi',
+        'PASSWORD': 'JrmkIdc22@323A12ZASZAZSDD',
         'HOST': 'db',
         'PORT': 5432,
     }
 }
 
 REST_FRAMEWORK = {
-    'NON_FIELD_ERROS_KEY': 'error'
+    'NON_FIELD_ERROS_KEY': 'error',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 # Password validation
@@ -132,3 +137,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'data.User'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS =  True
+EMAIL_PORT =  587
+EMAIL_HOST_USER = 'farfanet22@gmail.com'
+EMAIL_HOST_PASSWORD = 'Farafnet007'
+EMAIL_USE_TLS: True

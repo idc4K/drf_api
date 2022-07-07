@@ -6,9 +6,9 @@ services:
         volumes:
             - ./base/db:/var/lib/postgresql/donnee
         environment:
-            - POSTGRES_DB=api
-            - POSTGRES_USER=api
-            - POSTGRES_PASSWORD=JrmkIdc22@
+            - POSTGRES_DB=christapi
+            - POSTGRES_USER=christapi
+            - POSTGRES_PASSWORD=JrmkIdc22@323A12ZASZAZSDD
             - POSTGRES_PORT=5432
         # ports:
         # - "5482:5432"
@@ -25,7 +25,7 @@ services:
         environment:
             - POSTGRES_NAME=postgres
             - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=JrmkAV22@97#jr098
+            - POSTGRES_PASSWORD=JrmkIdc22@32311gf12312
             - POSTGRES_PORT=5432
         depends_on:
             - db
@@ -33,6 +33,6 @@ services:
         image: adminer
         restart: always
         ports:
-            - 9090:9090
+            - 8080:8080
         depends_on:
             - db
