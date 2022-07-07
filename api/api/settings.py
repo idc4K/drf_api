@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -140,9 +141,9 @@ AUTH_USER_MODEL = 'data.User'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_USE_TLS =  True
 EMAIL_PORT =  587
-EMAIL_HOST_USER = 'postmaster@sandboxbd8e255036354ce690c4619919d2a90c.mailgun.org'
-EMAIL_HOST_PASSWORD = '06709827094e69aef2bf23d1956cd64d-50f43e91-475f32c3'
+EMAIL_HOST_USER = '*****************************'
+EMAIL_HOST_PASSWORD = '***********************'
 EMAIL_USE_TLS: True
