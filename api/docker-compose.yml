@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+    db:
+        image: postgres
+        volumes:
+            - ./base/db:/var/lib/postgresql/donnee
+        environment:
+            - POSTGRES_DB=api
+            - POSTGRES_USER=api
+            - POSTGRES_PASSWORD=JrmkIdc22@
+            - POSTGRES_PORT=5432
+        # ports:
+        # - "5482:5432"
+
+    web:
+        build: .
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - .:/code
+            # - ./static:/code/static/
+            # - ./media:/code/media/
+        ports:
+            - "8000:8000"
+        environment:
+            - POSTGRES_NAME=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=JrmkAV22@97#jr098
+            - POSTGRES_PORT=5432
+        depends_on:
+            - db
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 9090:9090
+        depends_on:
+            - db
