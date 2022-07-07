@@ -62,7 +62,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     active = models.BooleanField(default=True)
     
     is_staff = models.BooleanField(default=False)
-    is_superuser = models.BooleanField(default=False) 
+    is_superuser = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+    deleted_at = models.DateTimeField(auto_now_add=True)
+     
 
     # fontction personalisé pour envoie des messages à l'utilisateur
     def email_user(self, *args, **kwargs):
