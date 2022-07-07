@@ -143,6 +143,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS =  True
 EMAIL_PORT =  587
-EMAIL_HOST_USER = 'farfanet22@gmail.com'
-EMAIL_HOST_PASSWORD = 'Farafnet007'
+EMAIL_HOST_USER = 'postmaster@sandboxbd8e255036354ce690c4619919d2a90c.mailgun.org'
+EMAIL_HOST_PASSWORD = '06709827094e69aef2bf23d1956cd64d-50f43e91-475f32c3'
 EMAIL_USE_TLS: True
