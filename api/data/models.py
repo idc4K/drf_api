@@ -16,10 +16,10 @@ from django.utils.translation import gettext_lazy as _
 # classe de modification de gestion des utilisateur par defaut de django
 class UserManager(BaseUserManager):
 
-    def create_user(self,email,password=None):
+    def create_user(self,email,last_name=None,first_name=None,password=None):
         if email is None:
             raise TypeError('le mail est obligatoire')
-        user=self.model(email=self.normalize_email(email))
+        user=self.model(email=self.normalize_email(email),last_name=last_name,first_name=first_name)
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -55,7 +55,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['first_name','first_name']
 
     session_token = models.CharField(max_length=10, default=0)
 
